@@ -207,6 +207,58 @@ Think of it like a human reviewing their journal and updating their mental model
 
 The goal: Be helpful without being annoying. Check in a few times a day, do useful background work, but respect quiet time.
 
+## Self-Improvement Workflow
+
+We use the `self-improving-agent` skill to capture learnings and continuously improve.
+
+### When to Log
+
+- **Errors:** Command fails, API returns non-zero, timeout, unexpected output → Log to `.learnings/ERRORS.md`
+- **Corrections:** User says "that's wrong", "actually it should be...", you realize a mistake → Log to `.learnings/LEARNINGS.md` with category `correction`
+- **Knowledge Gaps:** You discover something you didn't know, or documentation was outdated → `.learnings/LEARNINGS.md` with `knowledge_gap`
+- **Better Approaches:** Find a simpler, faster, or more reliable way to do something → `.learnings/LEARNINGS.md` with `best_practice`
+- **Feature Requests:** User says "can you also...", "I wish you could..." → `.learnings/FEATURE_REQUESTS.md`
+
+### How to Log
+
+Use the structured format in each file. Include:
+- ID (auto-generated pattern: LRN-YYYYMMDD-NNN, ERR-..., FTR-...)
+- Title, Category, Priority, Status, Area
+- Pattern-Key for deduplication (reuse if similar to previous)
+- Description with reproduction steps and concrete solution
+- See Also links to related entries
+
+### Promotion
+
+Periodically review `.learnings/`. If an entry meets these criteria, promote it:
+
+- Recurrence-Count >= 3
+- Seen across at least 2 distinct tasks
+- Occurred within a 30-day window
+
+Promote to:
+- `SOUL.md` — behavioral patterns, communication style
+- `AGENTS.md` — workflows, automation rules, process improvements
+- `TOOLS.md` — tool gotchas, integration quirks
+- `CLAUDE.md` or `.github/copilot-instructions.md` — project facts, build conventions
+
+Write concise prevention rules (what to do *before* or *while* coding), not long incident reports.
+
+### Automatic Hooks
+
+- `activator.sh` reminds you to evaluate learnings after each prompt
+- `error-detector.sh` automatically logs command failures (enabled in OpenClaw hook config)
+
+### Skill Extraction
+
+If a learning is:
+- Recurring (2+ See Also links) AND
+- Verified (status resolved with working fix) AND
+- Non-obvious (required real debugging) AND
+- Broadly applicable (not project-specific)
+
+Consider extracting it into a reusable skill. Use the provided `extract-skill.sh` helper.
+
 ## Make It Yours
 
 This is a starting point. Add your own conventions, style, and rules as you figure out what works.
