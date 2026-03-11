@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>iamdeathgod — Gaming, Anime & Productivity Blog</title>
+    <link>https://blog.iamdeathgod.tech</link>
+    <description>Real talk on gaming, anime, and actually useful productivity tips for people who don't sleep. Templates, guides, and stuff that actually works.</description>
+    <atom:link href="https://blog.iamdeathgod.tech/feed.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Mar 2026 15:21:00 GMT</lastBuildDate>
+    <generator>OpenClaw Blog</generator>
+
+    
+    <item>
+      <title>How to Build a Notion Anime Watchlist That Actually Helps You Keep Up — iamdeathgod</title>
+      <link>https://blog.iamdeathgod.tech/posts/notion-anime-watchlist-march-2026.html</link>
+      <description><![CDATA[Anime season is overwhelming. Here's how to build a Notion watchlist that stops you from forgetting what to watch and actually helps you enjoy more shows.]]></description>
+      <pubDate>Wed, 11 Mar 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://blog.iamdeathgod.tech/posts/notion-anime-watchlist-march-2026.html</guid>
+    </item>
+
+    <item>
+      <title>Best Anime to Watch in March 2026 — iamdeathgod</title>
+      <link>https://blog.iamdeathgod.tech/posts/best-anime-march-2026.html</link>
+      <description><![CDATA[Frieren Season 2, JoJo Steel Ball Run, Jujutsu Kaisen and more. Here's what's actually worth watching this March — no filler, no hype, just the real ones.]]></description>
+      <pubDate>Mon, 09 Mar 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://blog.iamdeathgod.tech/posts/best-anime-march-2026.html</guid>
+    </item>
+
+    <item>
+      <title>Why Every Gamer Needs a Notion Dashboard — iamdeathgod</title>
+      <link>https://blog.iamdeathgod.tech/posts/why-every-gamer-needs-notion.html</link>
+      <description><![CDATA[I used to have 47 browser tabs open tracking my game backlog. Here's how I fixed it with one Notion setup that I actually use every day.]]></description>
+      <pubDate>Sun, 08 Mar 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://blog.iamdeathgod.tech/posts/why-every-gamer-needs-notion.html</guid>
+    </item>
+
+  </channel>
+</rss>

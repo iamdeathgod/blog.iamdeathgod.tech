@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>iamdeathgod — Gaming, Anime & Productivity Blog</title>
+    <link>https://blog.iamdeathgod.tech</link>
+    <description>Real talk on gaming, anime, and actually useful productivity tips for people who don't sleep. Templates, guides, and stuff that actually works.</description>
+    <atom:link href="https://blog.iamdeathgod.tech/feed.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>{{LAST_BUILD_DATE}}</lastBuildDate>
+    <generator>OpenClaw Blog</generator>
+
+    {{POSTS}}
+
+  </channel>
+</rss>
