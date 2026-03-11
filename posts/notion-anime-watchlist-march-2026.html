@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>How to Build a Notion Anime Watchlist That Actually Helps You Keep Up — iamdeathgod</title>
+  <meta name="description" content="Anime season is overwhelming. Here's how to build a Notion watchlist that stops you from forgetting what to watch and actually helps you enjoy more shows." />
+  <meta name="keywords" content="notion anime tracker, anime watchlist, anime backlog, march 2026 anime, steel ball run, frieren, notion productivity, anime organization" />
+  <link rel="canonical" href="https://blog.iamdeathgod.tech/posts/notion-anime-watchlist-march-2026.html" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://blog.iamdeathgod.tech/posts/notion-anime-watchlist-march-2026.html" />
+  <meta property="og:title" content="How to Build a Notion Anime Watchlist That Actually Helps You Keep Up" />
+  <meta property="og:description" content="March 2026 has too many good anime. Here's how to Notion-ize your watchlist and actually keep up without going insane." />
+  <meta property="og:image" content="https://iamdeathgod.tech/logo.svg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@iamdeathgod" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "How to Build a Notion Anime Watchlist That Actually Helps You Keep Up",
+    "description": "Anime season is overwhelming. Here's how to build a Notion watchlist that stops you from forgetting what to watch and actually helps you enjoy more shows.",
+    "author": { "@type": "Person", "name": "iamdeathgod", "url": "https://iamdeathgod.tech" },
+    "datePublished": "2026-03-11",
+    "dateModified": "2026-03-11",
+    "publisher": { "@type": "Person", "name": "iamdeathgod" },
+    "mainEntityOfPage": "https://blog.iamdeathgod.tech/posts/notion-anime-watchlist-march-2026.html"
+  }
+  </script>
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #07070f; --surface: #0d0d1a; --surface2: #13132b;
+      --border: #1e1e3a; --purple: #7c3aed; --purple-light: #a855f7;
+      --cyan: #06b6d4; --text: #e2e8f0; --text-muted: #64748b; --green: #4ade80;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: var(--bg); color: var(--text); font-family: 'Space Grotesk', sans-serif; line-height: 1.7; }
+    body::before {
+      content: ''; position: fixed; inset: 0;
+      background-image: linear-gradient(rgba(124,58,237,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(124,58,237,0.03) 1px, transparent 1px);
+      background-size: 40px 40px; pointer-events: none; z-index: 0;
+    }
+    #navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 12px 32px; display: flex; align-items: center; justify-content: space-between;
+      background: rgba(7,7,15,0.9); backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(124,58,237,0.12); transition: transform 0.3s;
+    }
+    #navbar.hidden { transform: translateY(-100%); }
+    .nav-back { color: var(--text-muted); text-decoration: none; font-size: 0.88rem; transition: color 0.2s; }
+    .nav-back:hover { color: var(--purple-light); }
+
+    .article-wrap { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; padding: 100px 24px 80px; }
+
+    .post-header { margin-bottom: 40px; }
+    .post-meta { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
+    .tag { background: rgba(124,58,237,0.12); border: 1px solid rgba(124,58,237,0.25); color: var(--purple-light); font-size: 0.7rem; font-family: 'Space Mono', monospace; padding: 3px 10px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.08em; }
+    .tag.productivity { background: rgba(74,222,128,0.1); border-color: rgba(74,222,128,0.3); color: var(--green); }
+    .tag.anime { background: rgba(6,182,212,0.1); border-color: rgba(6,182,212,0.3); color: var(--cyan); }
+    .post-date { color: var(--text-muted); font-size: 0.78rem; font-family: 'Space Mono', monospace; }
+    h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 16px; }
+    .post-lead { font-size: 1.1rem; color: #94a3b8; line-height: 1.75; margin-bottom: 32px; border-left: 3px solid var(--purple); padding-left: 20px; }
+
+    .article-body h2 { font-size: 1.4rem; font-weight: 700; margin: 40px 0 16px; color: var(--text); }
+    .article-body h3 { font-size: 1.1rem; font-weight: 600; margin: 28px 0 12px; color: var(--purple-light); }
+    .article-body p { color: #b0bec5; margin-bottom: 20px; font-size: 1rem; line-height: 1.8; }
+    .article-body strong { color: var(--text); font-weight: 600; }
+    .article-body ul, .article-body ol { margin: 0 0 20px 24px; color: #b0bec5; }
+    .article-body li { margin-bottom: 8px; line-height: 1.7; }
+
+    .callout {
+      background: rgba(124,58,237,0.08); border: 1px solid rgba(124,58,237,0.25);
+      border-radius: 12px; padding: 20px 24px; margin: 28px 0;
+      display: flex; gap: 14px; align-items: flex-start;
+    }
+    .callout-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+    .callout p { margin: 0; color: var(--text); }
+
+    .cta-box {
+      background: linear-gradient(135deg, rgba(124,58,237,0.15), rgba(6,182,212,0.08));
+      border: 1px solid rgba(124,58,237,0.3); border-radius: 16px;
+      padding: 28px 32px; margin: 40px 0; text-align: center;
+    }
+    .cta-box h3 { font-size: 1.2rem; margin-bottom: 10px; }
+    .cta-box p { color: var(--text-muted); margin-bottom: 20px; font-size: 0.9rem; }
+    .cta-btn {
+      display: inline-block; background: var(--purple); color: white;
+      padding: 12px 28px; border-radius: 10px; text-decoration: none;
+      font-weight: 600; font-size: 0.95rem; transition: all 0.2s;
+    }
+    .cta-btn:hover { background: var(--purple-light); transform: translateY(-1px); }
+
+    .author-box {
+      display: flex; gap: 16px; align-items: center;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 14px; padding: 20px 24px; margin-top: 48px;
+    }
+    .author-avatar { width: 52px; height: 52px; background: linear-gradient(135deg, var(--purple), var(--cyan)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; }
+    .author-name { font-weight: 600; margin-bottom: 4px; }
+    .author-bio { color: var(--text-muted); font-size: 0.85rem; }
+
+    footer { border-top: 1px solid var(--border); padding: 28px 24px; text-align: center; color: var(--text-muted); font-size: 0.78rem; font-family: 'Space Mono', monospace; position: relative; z-index: 1; }
+    footer a { color: var(--purple-light); text-decoration: none; }
+
+    @media (max-width: 600px) {
+      .article-wrap { padding: 88px 16px 60px; }
+      h1 { font-size: 1.7rem; }
+      #navbar { padding: 10px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="https://blog.iamdeathgod.tech" class="nav-back">← Back to Blog</a>
+    <a href="https://iamdeathgod.tech">
+      <img src="https://iamdeathgod.tech/logo.svg" alt="iamdeathgod" style="height:40px;width:auto;" />
+    </a>
+  </nav>
+
+  <div class="article-wrap">
+    <header class="post-header">
+      <div class="post-meta">
+        <span class="tag">Anime</span>
+        <span class="tag productivity">Productivity</span>
+        <span class="post-date">March 11, 2026 · 5 min read</span>
+      </div>
+      <h1>How to Build a Notion Anime Watchlist That Actually Helps You Keep Up</h1>
+      <p class="post-lead">March 2026 is stacked: Steel Ball Run, Frieren S2, Link Click S3, Oshi No Ko S3. It's too much. Here's how to Notion-ize your anime life so you actually watch the good stuff instead of forgetting it exists.</p>
+    </header>
+
+    <article class="article-body">
+
+      <p>Anime season hit different this year. JoJo's Steel Ball Run is drawing rave reviews. Frieren is back with Season 2. Link Click Season 3 is out. Oshi No Ko continues to be unhinged in the best way.</p>
+
+      <p>And that's just the tip of the iceberg.</p>
+
+      <p>If you're like me, you've got three Crunchyroll tabs open, a Netflix queue that's looking sad, and a vague memory that someone told you about a show that came out last week but you can't remember what it was called. The list lives in your head, and your head is a terrible place for lists.</p>
+
+      <h2>The "Oh Shit, I Forgot That Existed" Problem</h2>
+
+      <p>I used to track anime in my head. Or in Twitter bookmarks. Or in random Discord messages to myself. It got bad. I'd remember that a show was airing, only to realize three episodes in that I'd missed the first two and had no idea what was happening. Or worse — I'd binge a whole season of something mediocre because I couldn't remember what I actually wanted to watch.</p>
+
+      <p>You don't need a complicated anime database. You need something dead simple that lives in the one app you already have open all day.</p>
+
+      <div class="callout">
+        <span class="callout-icon">💡</span>
+        <p>The best system is the one you actually use. If it takes more than 60 seconds to add a new anime, you won't use it. Keep it stupid simple.</p>
+      </div>
+
+      <h2>The 4-Property Anime Database</h2>
+
+      <p>That's it. Four properties. You don't need seventeen statuses and custom icons and relation databases to link to character pages. Just four:</p>
+
+      <h3>1. Title (Title property)</h3>
+      <p>Self-explanatory. Add the English title and optionally the Japanese title in the same property or a separate one if you're that thorough.</p>
+
+      <h3>2. Status (Select property)</h3>
+      <p>Options: Watching, Plan to Watch, Completed, On Hold, Dropped. That's all you need. Not "Re-watching" and "Maybe Later" and "Half-Dead" — keep the list clean.</p>
+
+      <h3>3. Platform (Select property)</h3>
+      <p>Crunchyroll, Netflix, Hulu, Disney+, Prime, HiDive, Bilibili, YouTube, etc. Where is this actually streaming? If it's "out there" somewhere, label it accordingly.</p>
+
+      <h3>4. Notes (Text property)</h3>
+      <p>Why you added it. "Recommended by @deathgod", "Looks like Frieren vibes", "Need to watch with friends", "Animation looks insane". One line is enough.</p>
+
+      <p>That's your database. Import an icon pack if you want it to look pretty, but it'll work fine without.</p>
+
+      <h2>The Magic Is in the Views</h2>
+
+      <p>Once you have the database, create filtered views that actually help you decide what to watch:</p>
+
+      <ul>
+        <li><strong>"What's airing now?"</strong> — Filter: Status = Watching OR Plan to Watch, add a date filter for episodes released in last 7 days. This view shows what's currently ongoing and needs your attention.</li>
+        <li><strong>"Something new"</strong> — Filter: Status = Plan to Watch, sort by date added DESC. Quick pick from the top.</li>
+        <li><strong>"What dropped this week?"</strong> — Filter: Status = Plan to Watch, Platform = [your primary streaming service]. See what's available right now on the service you pay for.</li>
+        <li><strong>"The void"</strong> — A gallery view showing all "Plan to Watch" with cover art. Scroll until something catches your eye. No sorting — randomness is good sometimes.</li>
+      </ul>
+
+      <p>Bookmark these views on your phone home screen using Notion's Quick Find or just keep the page pinned. When you have 30 minutes to kill, open "Something new" and pick.</p>
+
+      <div class="callout">
+        <span class="callout-icon">⚡</span>
+        <p>Pro tip: Add a "Priority" toggle property if you want to mark your "must-watch this season" shows. Then create a "Priority Queue" view. Keeps the hype titles top of mind.</p>
+      </div>
+
+      <h2>Don't Over-Engineer This</h2>
+
+      <p>I see it all the time — elaborate anime tracking templates with rating scales, scene-by-scene logs, custom page templates for every genre, relation databases linking to characters, studios, and voice actors.</p>
+
+      <p>Stop.</p>
+
+      <p>You're not curating an anime museum. You're trying to remember what to watch next without scrolling through 47 tabs. The moment your system feels like work, you stop using it.</p>
+
+      <p>If you're spending more time maintaining your watchlist than watching anime, you've lost. Keep it to:</p>
+
+      <ul>
+        <li>One database</li>
+        <li>Four properties</li>
+        <li>Three useful views</li>
+        <li>One page on your phone homescreen</li>
+
+      </ul>
+
+      <p>That's enough. Do you want to be an anime enjoyer or a Notion architect?</p>
+
+      <h2>What About My Scores Though?</h2>
+
+      <p>You don't need scores. If you really want to track how much you liked something, add a "Rating" number property (1-10) and use it after you complete a show. But honestly? The "Completed" tab is your record. If you finished it, you liked it enough. If you dropped it, it wasn't for you. That's all the data you need.</p>
+
+      <p>Scores create decision fatigue. "Is this a 7 or an 8?" Who cares. Just mark it done and move on.</p>
+
+      <h2>March 2026: The Perfect Stress Test</h2>
+
+      <p>This season is brutal:</p>
+
+      <ul>
+        <li><strong>Steel Ball Run</strong> — JoJo's most beloved arc, finally animated.</li>
+        <li><strong>Frieren Season 2</strong> — One of the most beautifully paced fantasy series ever.</li>
+        <li><strong>Link Click Season 3</strong> — The hype is real for this Chinese time-travel mystery.</li>
+        <li><strong>Oshi No Ko Season 3</strong> — Dark, unhinged, and somehow still getting darker.</li>
+        <li><strong>Planet of Lana II</strong> — If you liked the first, you're already watching.</li>
+      </ul>
+
+      <p>Without a system, you'll forget half these exist by April. With a simple Notion watchlist, you'll actually get through them.</p>
+
+      <p>Set it up now. Takes 10 minutes. Then add everything you're planning to watch this season. Done. You're organized. Go actually watch anime instead of scrolling Twitter wondering what to watch.</p>
+
+      <div class="callout">
+        <span class="callout-icon">🎬</span>
+        <p>Want a pre-built template? I've got a clean Anime Watchlist template that comes with the exact database, views, and mobile-friendly page setup described above. No fluff, just works. <a href="https://iamdeathgod.gumroad.com/l/anime-watchlist-notion" style="color:var(--cyan)">Grab it here for $3</a>.</p>
+      </div>
+
+      <h2>The Bottom Line</h2>
+
+      <p>Your brain is for having ideas, not storing them. Your anime watchlist is not the place to test your memory.</p>
+
+      <p>Build the watchlist. Set up the views. Use it for 5 minutes before you start watching something. That's it.</p>
+
+      <p>Now go enjoy March 2026 before the next season drops and you need to do this all over again.</p>
+
+      <p>Happy watching. ☠️</p>
+
+    </article>
+
+    <!-- Social Share Buttons -->
+    <div style="display:flex;gap:12px;align-items:center;margin:32px 0;padding:20px 24px;background:#0d0d1a;border:1px solid #1e1e3a;border-radius:12px;">
+      <span style="font-family:'Space Mono',monospace;font-size:0.72rem;color:#64748b;letter-spacing:0.1em;text-transform:uppercase;flex-shrink:0;">Share →</span>
+      <a href="javascript:void(0)" onclick="window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(document.title)+'&url='+encodeURIComponent(location.href),'_blank','width=550,height=420')" style="display:inline-flex;align-items:center;gap:6px;background:rgba(124,58,237,0.12);border:1px solid rgba(124,58,237,0.25);color:#a855f7;font-size:0.82rem;padding:7px 14px;border-radius:8px;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.background='rgba(124,58,237,0.25)'" onmouseout="this.style.background='rgba(124,58,237,0.12)'">𝕏 Tweet</a>
+      <a href="javascript:void(0)" onclick="window.open('https://reddit.com/submit?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title),'_blank','width=550,height=500')" style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,69,0,0.1);border:1px solid rgba(255,69,0,0.25);color:#ff6b35;font-size:0.82rem;padding:7px 14px;border-radius:8px;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.background='rgba(255,69,0,0.2)'" onmouseout="this.style.background='rgba(255,69,0,0.1)'">Reddit</a>
+      <a href="javascript:void(0)" onclick="navigator.clipboard.writeText(location.href).then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Copy Link',2000)})" style="display:inline-flex;align-items:center;gap:6px;background:rgba(6,182,212,0.1);border:1px solid rgba(6,182,212,0.25);color:#06b6d4;font-size:0.82rem;padding:7px 14px;border-radius:8px;text-decoration:none;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.background='rgba(6,182,212,0.2)'" onmouseout="this.style.background='rgba(6,182,212,0.1)'">Copy Link</a>
+    </div>
+    <div class="author-box">
+      <div class="author-avatar">☠️</div>
+      <div>
+        <div class="author-name">iamdeathgod</div>
+        <div class="author-bio">Gamer, anime watcher, Notion nerd. Building templates for people who refuse to be disorganized. <a href="https://twitter.com/iamdeathgod" style="color:var(--purple-light)">@iamdeathgod</a></div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <a href="https://blog.iamdeathgod.tech">← All Posts</a> &nbsp;·&nbsp;
+    <a href="https://iamdeathgod.tech">iamdeathgod.tech</a> &nbsp;·&nbsp;
+    <a href="https://iamdeathgod.gumroad.com">Store</a>
+  </footer>
+
+  <script>
+    let lastY = 0;
+    const nav = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      if (y > lastY && y > 60) nav.classList.add('hidden');
+      else nav.classList.remove('hidden');
+      lastY = y;
+    }, { passive: true });
+  </script>
+
+</body>
+</html>
