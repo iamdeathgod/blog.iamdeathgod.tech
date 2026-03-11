@@ -1,0 +1,69 @@
+{
+  "template_name": "Gaming HQ",
+  "version": "1.0.0",
+  "description": "All-in-one Notion template for gamers to track backlog, sessions, wishlist, and goals.",
+  "properties": {
+    "backlog_table": {
+      "title": "Game Backlog",
+      "properties": [
+        { "name": "Title", "type": "title" },
+        { "name": "Status", "type": "select", "options": ["Not Started", "Playing", "Completed", "Dropped"] },
+        { "name": "Platform", "type": "select", "options": ["Steam", "Epic", "GOG", "PS5", "Xbox", "Switch", "Other"] },
+        { "name": "Genre", "type": "multi_select", "options": ["RPG", "FPS", "Indie", "Strategy", "Simulation", "Racing", "Platformer", "Metroidvania"] },
+        { "name": "Est. Hours", "type": "number", "format": "number" },
+        { "name": "Priority", "type": "select", "options": ["High", "Medium", "Low"] },
+        { "name": "Date Added", "type": "date" }
+      ]
+    },
+    "session_log": {
+      "title": "Session Log",
+      "properties": [
+        { "name": "Date", "type": "date" },
+        { "name": "Game", "type": "relation", "relation_to": "backlog_table" },
+        { "name": "Duration (hrs)", "type": "number" },
+        { "name": "Notes", "type": "text" },
+        { "name": "Mood", "type": "select", "options": ["Enjoying", "Meh", "Frustrated", "Bored"] }
+      ]
+    },
+    "wishlist": {
+      "title": "Wishlist",
+      "properties": [
+        { "name": "Game", "type": "title" },
+        { "name": "Platform", "type": "select", "options": ["Steam", "Epic", "GOG", "PS5", "Xbox", "Switch"] },
+        { "name": "Current Price", "type": "number" },
+        { "name": "Target Price", "type": "number" },
+        { "name": "Date Added", "type": "date" },
+        { "name": "Alert Triggered", "type": "checkbox" }
+      ]
+    },
+    "goals": {
+      "title": "Gaming Goals",
+      "properties": [
+        { "name": "Goal", "type": "title" },
+        { "name": "Type", "type": "select", "options": ["Monthly", "Quarterly", "Yearly"] },
+        { "name": "Target Games", "type": "relation", "relation_to": "backlog_table" },
+        { "name": "Completed", "type": "checkbox" },
+        { "name": "Progress Notes", "type": "text" }
+      ]
+    }
+  },
+  "views": {
+    "backlog_high_priority": {
+      "filter": "Status = Not Started AND Priority = High",
+      "sort": "Date Added DESC"
+    },
+    "session_calendar": {
+      "view_type": "calendar",
+      "group_by": "Date"
+    },
+    "wishlist_price_drop": {
+      "filter": "Alert Triggered = true"
+    }
+  },
+  "dashboard_layout": [
+    "Backlog summary (counts by status)",
+    " Sessions this week",
+    " Wishlist price alerts",
+    " Active goals progress"
+  ]
+}

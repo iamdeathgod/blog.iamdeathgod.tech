@@ -1,0 +1,43 @@
+{
+  "template_name": "Anime Vault",
+  "version": "1.0.0",
+  "description": "Simple, effective Notion template for tracking anime watchlist without over-engineering.",
+  "properties": {
+    "anime_database": {
+      "title": "Anime Watchlist",
+      "properties": [
+        { "name": "Title", "type": "title" },
+        { "name": "Status", "type": "select", "options": ["Watching", "Plan to Watch", "Completed", "On Hold", "Dropped"] },
+        { "name": "Platform", "type": "select", "options": ["Crunchyroll", "Netflix", "Hulu", "Disney+", "Prime", "HiDive", "Bilibili", "YouTube", "Other/Out there"] },
+        { "name": "Notes", "type": "text", "description": "Why you added it, recommendations, etc." },
+        { "name": "Priority", "type": "checkbox", "description": "Must-watch this season" },
+        { "name": "Season", "type": "select", "options": ["Winter 2026", "Spring 2026", "Summer 2026", "Fall 2026", "Older"] },
+        { "name": "Episodes", "type": "number" },
+        { "name": "Score", "type": "number", "format": "number", "min": 1, "max": 10 }
+      ]
+    }
+  },
+  "views": {
+    "whats_airing_now": {
+      "filter": "Status = Watching OR Status = Plan to Watch",
+      "sort": "Date added DESC"
+    },
+    "something_new": {
+      "filter": "Status = Plan to Watch",
+      "sort": "Date added DESC",
+      "limit": 20
+    },
+    "platform_filter_cr": {
+      "filter": "Platform = Crunchyroll",
+      "group_by": "Season"
+    },
+    "the_void_gallery": {
+      "view_type": "gallery",
+      "filter": "Status = Plan to Watch",
+      "sort": "random"
+    }
+  },
+  "mobile_friendly": true,
+  "quick_add_template": true,
+  "notes": "Minimalist design. Focus on speed of entry. One database, four properties (Title, Status, Platform, Notes). Optional: Priority, Season, Episodes, Score."
+}

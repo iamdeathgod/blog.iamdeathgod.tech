@@ -1,0 +1,41 @@
+{
+  "editorial_calendar": [
+    {
+      "date": "2026-03-08",
+      "slug": "why-every-gamer-needs-notion",
+      "title": "Why Every Gamer Needs a Notion Dashboard",
+      "tags": ["Gaming", "Productivity"],
+      "status": "published",
+      "url": "/posts/why-every-gamer-needs-notion.html",
+      "cta_product": "Gaming HQ ($7)"
+    },
+    {
+      "date": "2026-03-09",
+      "slug": "best-anime-march-2026",
+      "title": "Best Anime to Watch in March 2026",
+      "tags": ["Anime"],
+      "status": "published",
+      "url": "/posts/best-anime-march-2026.html",
+      "cta_product": "Anime Vault ($7)"
+    },
+    {
+      "date": "2026-03-11",
+      "slug": "notion-anime-watchlist-march-2026",
+      "title": "How to Build a Notion Anime Watchlist That Actually Helps You Keep Up",
+      "tags": ["Anime", "Productivity"],
+      "status": "published",
+      "url": "/posts/notion-anime-watchlist-march-2026.html",
+      "cta_product": "Anime Watchlist ($3)"
+    }
+  ],
+  "ideas_backlog": [
+    "How to use Notion to manage game wishlists and sales alerts",
+    "Stopping anime burnout: a Notion-based watchlist strategy",
+    "Creator Dashboard walkthrough (video)",
+    "Notion template pricing strategy — $3 vs $7 vs $9"
+  ],
+  "next_suggested": {
+    "topic": "Anime Vault deep dive",
+    "reason": "Template exists but no dedicated post yet"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "template_name": "Creator Dashboard",
+  "version": "1.0.0",
+  "description": "All-in-one Notion dashboard for content creators managing multiple projects, side hustles, and production workflows.",
+  "properties": {
+    "content_calendar": {
+      "title": "Content Calendar",
+      "properties": [
+        { "name": "Title", "type": "title" },
+        { "name": "Type", "type": "select", "options": ["Blog Post", "Video", "Newsletter", "Social", "Product"] },
+        { "name": "Status", "type": "select", "options": ["Idea", "Research", "Outline", "Writing", "Editing", "Ready", "Published", "Archived"] },
+        { "name": "Publish Date", "type": "date" },
+        { "name": "Platform", "type": "multi_select", "options": ["Blog", "YouTube", "Twitch", "Telegram", "Twitter", "Gumroad"] },
+        { "name": "Estimated Hours", "type": "number" },
+        { "name": "Actual Hours", "type": "number" },
+        { "name": "Related Project", "type": "relation", "relation_to": "projects_table" }
+      ]
+    },
+    "projects_table": {
+      "title": "Projects",
+      "properties": [
+        { "name": "Project Name", "type": "title" },
+        { "name": "Category", "type": "select", "options": ["Content", "Product", "Community", "Learning"] },
+        { "name": "Status", "type": "select", "options": ["Planning", "In Progress", "On Hold", "Completed", "Abandoned"] },
+        { "name": "Priority", "type": "select", "options": ["P1 (Crucial)", "P2 (Important)", "P3 (Nice-to-have)"] },
+        { "name": "Deadline", "type": "date" },
+        { "name": "Progress %", "type": "number", "format": "number" },
+        { "name": "Notes", "type": "text" }
+      ]
+    },
+    "tasks_table": {
+      "title": "Tasks",
+      "properties": [
+        { "name": "Task", "type": "title" },
+        { "name": "Project", "type": "relation", "relation_to": "projects_table" },
+        { "name": "Content Item", "type": "relation", "relation_to": "content_calendar" },
+        { "name": "Status", "type": "select", "options": ["To Do", "Doing", "Done", "Blocked"] },
+        { "name": "Priority", "type": "select", "options": ["High", "Medium", "Low"] },
+        { "name": "Due Date", "type": "date" },
+        { "name": "Time Estimate", "type": "number" }
+      ]
+    },
+    "revenue_tracker": {
+      "title": "Side Hustle Revenue",
+      "properties": [
+        { "name": "Date", "type": "date" },
+        { "name": "Source", "type": "select", "options": ["Gumroad", "Affiliate", "Sponsorship", "Donation", "Other"] },
+        { "name": "Amount", "type": "number", "format": "number" },
+        { "name": "Product", "type": "text" },
+        { "name": "Notes", "type": "text" }
+      ]
+    }
+  },
+  "dashboards": {
+    "weekly_review": {
+      "components": [
+        "Tasks due this week",
+        "Content scheduled (calendar view)",
+        "Project progress bars",
+        "Revenue this month"
+      ]
+    },
+    "today": {
+      "components": [
+        "Tasks withToday date",
+        "Upcoming deadlines (next 7 days)",
+        "Quick-add content task"
+      ]
+    }
+  },
+  "automations": {
+    "task_from_content": "When content status changes to 'Writing', auto-create related tasks: draft, research, edit",
+    "revenue_summary": "Monthly revenue rollup per source"
+  }
+}

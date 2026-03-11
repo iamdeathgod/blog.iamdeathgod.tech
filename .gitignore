@@ -1,0 +1,8 @@
+# Sensitive - do not commit
+memory/github_token.txt
+TOOLS.md
+.openclaw/
+
+# OS
+.DS_Store
+Thumbs.db

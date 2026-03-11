@@ -1,0 +1,20 @@
+{
+  "origin_url": "https://github.com/iamdeathgod/blog.iamdeathgod.tech.git",
+  "default_branch": "main",
+  "last_commit": "e01d792",
+  "commit_message": "chore: remove newsletter sections (paused)",
+  "committed_at": "2026-03-11T21:56:00+05:30",
+  "last_push_attempt": null,
+  "push_status": "pending_credentials",
+  "pat_location": "workspace_root/memory/github_token.txt",
+  "feed_generator": {
+    "script": "generate-feed.js",
+    "output": "feed.xml",
+    "last_run": null,
+    "auto_integration": "pending"
+  },
+  "protected_files": [
+    "feed.xml",
+    "sitemap.xml"
+  ]
+}

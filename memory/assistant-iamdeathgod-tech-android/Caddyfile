@@ -1,0 +1,6 @@
+assistant.iamdeathgod.tech {
+  reverse_proxy ws://127.0.0.1:18789 {
+    header_up Authorization "Bearer <TOKEN>"
+  }
+  tls you@example.com
+}

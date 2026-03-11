@@ -1,0 +1,48 @@
+{
+  "brief_id": "RB-001",
+  "generated_for": "blog-post",
+  "topic": "Notion Anime Watchlist March 2026",
+  "requested_by": "deathgod",
+  "date": "2026-03-11T19:00:00+05:30",
+  "research_questions": [
+    "What are the trending anime this season?",
+    "What are common pain points with anime watchlists?",
+    "How do competitors (MyAnimeList, AniList) handle watchlists?",
+    "What SEO keywords rank for 'anime watchlist notion'?"
+  ],
+  "tavily_results": {
+    "query": "trending anime march 2026",
+    "top_results": [
+      {
+        "title": "Steel Ball Run anime adaptation announced",
+        "url": "https://example.com/sbr-announcement",
+        "snippet": "JoJo's Steel Ball Run arc gets long-awaited anime..."
+      }
+    ]
+  },
+  "insights": [
+    "March 2026 has 5+ major titles (SBR, Frieren S2, Link Click S3, Oshi No Ko S3, JJK finale)",
+    "Audience: gamers who also watch anime; productivity-focused",
+    "Common complaint: losing track of shows across Crunchyroll/Netflix/Hulu",
+    "Notion templates sell for $3-5; simple databases outperform complex ones"
+  ],
+  "recommended_structure": {
+    "hook": "The 'oh shit I forgot that exists' problem",
+    "body": [
+      "Why typical watchlists fail (complexity, fragmentation)",
+      "The 4-property Notion database (Title, Status, Platform, Notes)",
+      "Smart Views: airing now, something new, platform filter",
+      "Don't over-engineer: keep it simple"
+    ],
+    "cta": "Anime Watchlist template ($3)"
+  },
+  "keywords": [
+    "notion anime watchlist",
+    "march 2026 anime",
+    "anime backlog",
+    "frieren season 2",
+    "steel ball run anime",
+    "notion productivity"
+  ],
+  "sources": []
+}

@@ -1,0 +1,55 @@
+{
+  "todos": [
+    {
+      "id": "NL-001",
+      "title": "Finish MailerLite newsletter integration",
+      "desc": "Add DNS records (CNAME + TXT) at Cloudflare; test signup; set up RSS automation",
+      "priority": "medium",
+      "status": "in_progress",
+      "blockers": ["DNS propagation"],
+      "created": "2026-03-11T21:43:00+05:30"
+    },
+    {
+      "id": "GR-001",
+      "title": "Create Gumroad product: Gaming HQ ($7)",
+      "desc": "Upload Notion template, write sales copy, set URL slug to 'gamingnotion'",
+      "priority": "high",
+      "status": "todo",
+      "depends_on": [],
+      "created": "2026-03-11T20:11:00+05:30"
+    },
+    {
+      "id": "GR-002",
+      "title": "Create Gumroad product: Anime Watchlist ($3)",
+      "desc": "Upload Notion template, write sales copy, set URL slug to 'anime-watchlist-notion'",
+      "priority": "high",
+      "status": "todo",
+      "depends_on": [],
+      "created": "2026-03-11T20:11:00+05:30"
+    },
+    {
+      "id": "RSS-001",
+      "title": "Integrate RSS feed generation into publish workflow",
+      "desc": "Update heartbeat or create Git hook to run generate-feed.js on new post commit",
+      "priority": "medium",
+      "status": "todo",
+      "created": "2026-03-11T19:56:00+05:30"
+    },
+    {
+      "id": "SEO-001",
+      "title": "SEO audit of published posts",
+      "desc": "Check OG tags, canonical URLs, schema, meta descriptions; fix any gaps",
+      "priority": "low",
+      "status": "todo",
+      "created": "2026-03-11T22:00:00+05:30"
+    },
+    {
+      "id": "QA-001",
+      "title": "Broken link sweep",
+      "desc": "Use crawler (or manual) to find 404s across blog.iamdeathgod.tech",
+      "priority": "medium",
+      "status": "todo",
+      "created": "2026-03-11T20:09:00+05:30"
+    }
+  ]
+}
