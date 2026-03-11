@@ -3,29 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Primary SEO -->
-  <title>iamdeathgod — Gaming, Anime & Productivity Blog</title>
-  <meta name="description" content="Real talk on gaming, anime, and actually useful productivity tips for people who don't sleep. Templates, guides, and stuff that actually works." />
-  <meta name="keywords" content="gaming blog, anime blog, notion templates, productivity for gamers, gaming setup, anime recommendations, game tracker, notion gaming" />
-  <meta name="author" content="iamdeathgod" />
+  <title>iamdeathgod Blog — Gaming, Anime & Productivity</title>
+  <meta name="description" content="Real talk on gaming, anime, and actually useful productivity tips. Notion templates, guides, and stuff that actually works." />
   <link rel="canonical" href="https://blog.iamdeathgod.tech" />
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://blog.iamdeathgod.tech" />
-  <meta property="og:title" content="iamdeathgod — Gaming, Anime & Productivity Blog" />
-  <meta property="og:description" content="Real talk on gaming, anime, and actually useful productivity tips for people who don't sleep." />
+  <meta property="og:title" content="iamdeathgod Blog" />
+  <meta property="og:description" content="Gaming, anime, and productivity for people who refuse to be disorganized." />
   <meta property="og:image" content="https://iamdeathgod.tech/logo.svg" />
 
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@iamdeathgod" />
-  <meta name="twitter:title" content="iamdeathgod — Gaming, Anime & Productivity Blog" />
-  <meta name="twitter:description" content="Real talk on gaming, anime, and actually useful productivity tips for people who don't sleep." />
-  <meta name="twitter:image" content="https://iamdeathgod.tech/logo.svg" />
 
-  <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -33,632 +23,285 @@
     "name": "iamdeathgod",
     "url": "https://blog.iamdeathgod.tech",
     "description": "Gaming, anime, and productivity blog",
-    "author": {
-      "@type": "Person",
-      "name": "iamdeathgod",
-      "url": "https://iamdeathgod.tech",
-      "sameAs": [
-        "https://twitter.com/iamdeathgod",
-        "https://github.com/iamdeathgod"
-      ]
-    }
+    "author": { "@type": "Person", "name": "iamdeathgod", "url": "https://iamdeathgod.tech" }
   }
   </script>
 
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="apple-touch-icon" href="/favicon.svg" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
     :root {
-      --bg: #07070f;
-      --surface: #0d0d1a;
-      --surface2: #13132b;
-      --border: #1e1e3a;
-      --purple: #7c3aed;
-      --purple-light: #a855f7;
-      --purple-glow: rgba(124,58,237,0.25);
-      --cyan: #06b6d4;
-      --text: #e2e8f0;
-      --text-muted: #64748b;
-      --green: #4ade80;
+      --bg: #000000;
+      --text: #FFFFFF;
+      --accent: #ECD06F;
+      --muted: #888888;
+      --card-bg: rgba(255,255,255,0.03);
+      --card-border: rgba(255,255,255,0.08);
+      --max-width: 1400px;
+      --section-pad: clamp(80px, 10vw, 120px);
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
+    html { scroll-behavior: smooth; }
     body {
       background: var(--bg);
       color: var(--text);
-      font-family: 'Space Grotesk', sans-serif;
-      min-height: 100vh;
+      font-family: 'Inter', sans-serif;
       line-height: 1.6;
     }
 
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(124,58,237,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(124,58,237,0.03) 1px, transparent 1px);
-      background-size: 40px 40px;
-      pointer-events: none;
-      z-index: 0;
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--text); }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
     }
 
-    /* Navbar */
-    #navbar {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      padding: 12px 32px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: rgba(7,7,15,0.9);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(124,58,237,0.12);
-      transition: transform 0.3s ease;
-    }
-    #navbar.hidden { transform: translateY(-100%); }
+    section { padding: var(--section-pad) 0; }
 
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      padding: 1.5rem 0;
+      background: rgba(0,0,0,0.8);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--card-border);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { font-weight: 700; font-size: 1.1rem; letter-spacing: .05em; }
     .nav-links {
-      display: flex;
-      gap: 24px;
-      align-items: center;
+      display: flex; gap: 2rem; list-style: none;
     }
     .nav-links a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.88rem;
-      transition: color 0.2s;
+      font-size: .85rem; color: var(--muted);
+      position: relative; padding: .25rem 0;
     }
-    .nav-links a:hover { color: var(--purple-light); }
-
-    /* Hero */
-    .hero {
-      position: relative;
-      z-index: 1;
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 120px 24px 60px;
-      text-align: center;
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px;
+      background: var(--accent); transition: width .3s ease;
     }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-links a:hover { color: var(--text); }
 
+    /* HERO */
+    #hero {
+      min-height: 70vh; display: flex; flex-direction: column; justify-content: center;
+      text-align: center; padding-top: 100px;
+    }
     .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(124,58,237,0.12);
-      border: 1px solid rgba(124,58,237,0.35);
-      color: var(--purple-light);
-      font-family: 'Space Mono', monospace;
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
-      padding: 5px 14px;
-      border-radius: 20px;
-      margin-bottom: 20px;
+      display: inline-block; font-family: 'Space Mono', monospace; font-size: .7rem;
+      color: var(--accent); border: 1px solid var(--accent); padding: .3rem .8rem;
+      border-radius: 99px; margin-bottom: 1.5rem; letter-spacing: .1em;
+    }
+    .hero-title {
+      font-size: clamp(40px, 7vw, 80px); font-weight: 700; letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+    .hero-subtitle {
+      font-size: clamp(16px, 3vw, 22px); color: var(--muted); max-width: 600px; margin: 0 auto 2rem;
     }
 
-    .hero h1 {
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      line-height: 1.15;
-      margin-bottom: 16px;
+    /* FEATURED */
+    #featured { border-top: 1px solid var(--card-border); }
+    .featured-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;
+    }
+    .featured-label {
+      font-family: 'Space Mono', monospace; font-size: .75rem; color: var(--accent);
+      letter-spacing: .1em; margin-bottom: .5rem;
+    }
+    .featured-title { font-size: clamp(28px, 4vw, 42px); margin-bottom: 1rem; line-height: 1.2; }
+    .featured-excerpt {
+      font-size: 1rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.5rem;
+    }
+    .featured-meta {
+      font-size: .8rem; color: var(--muted); margin-top: 1rem; display: flex; gap: 1rem;
+    }
+    .featured-tag {
+      background: var(--card-bg); border: 1px solid var(--card-border);
+      padding: .2rem .6rem; border-radius: 4px; font-size: .7rem;
     }
 
-    .hero h1 span {
-      background: linear-gradient(135deg, var(--purple-light), var(--cyan));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .hero p {
-      color: var(--text-muted);
-      font-size: 1rem;
-      max-width: 500px;
-      margin: 0 auto 32px;
-    }
-
-    /* Categories */
-    .categories {
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 0;
-    }
-
-    .cat-btn {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 99px;
-      color: var(--text-muted);
-      font-family: 'Space Mono', monospace;
-      font-size: 0.75rem;
-      padding: 6px 16px;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    .cat-btn:hover, .cat-btn.active {
-      background: rgba(124,58,237,0.15);
-      border-color: var(--purple);
-      color: var(--purple-light);
-    }
-
-    /* Main layout */
-    .main {
-      position: relative;
-      z-index: 1;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 60px 24px 80px;
-      display: grid;
-      grid-template-columns: 1fr 300px;
-      gap: 40px;
-      align-items: start;
-    }
-
-    /* Featured post */
-    .featured {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      overflow: hidden;
-      margin-bottom: 32px;
-      transition: border-color 0.3s;
-      text-decoration: none;
-      color: inherit;
-      display: block;
-      position: relative;
-    }
-    .featured:hover { border-color: var(--purple); }
-
-    .featured-img {
-      width: 100%;
-      height: 240px;
-      background: linear-gradient(135deg, #1a0a2e, #0a1a2e, #1a0a1a);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 4rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .featured-img::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 50% 50%, rgba(124,58,237,0.3), transparent 70%);
-    }
-
-    .featured-badge {
-      position: absolute;
-      top: 16px;
-      left: 16px;
-      background: var(--purple);
-      color: white;
-      font-family: 'Space Mono', monospace;
-      font-size: 0.68rem;
-      letter-spacing: 0.1em;
-      padding: 4px 10px;
-      border-radius: 4px;
-      text-transform: uppercase;
-    }
-
-    .featured-body { padding: 28px; }
-
-    .post-meta {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 12px;
-      flex-wrap: wrap;
-    }
-
-    .tag {
-      background: rgba(124,58,237,0.12);
-      border: 1px solid rgba(124,58,237,0.25);
-      color: var(--purple-light);
-      font-size: 0.72rem;
-      font-family: 'Space Mono', monospace;
-      padding: 3px 10px;
-      border-radius: 4px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .tag.anime { background: rgba(6,182,212,0.1); border-color: rgba(6,182,212,0.3); color: var(--cyan); }
-    .tag.productivity { background: rgba(74,222,128,0.1); border-color: rgba(74,222,128,0.3); color: var(--green); }
-
-    .post-date {
-      color: var(--text-muted);
-      font-size: 0.78rem;
-      font-family: 'Space Mono', monospace;
-    }
-
-    .post-read-time {
-      color: var(--text-muted);
-      font-size: 0.78rem;
-    }
-
-    .featured-body h2 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-      margin-bottom: 12px;
-      line-height: 1.3;
-    }
-
-    .featured-body p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      line-height: 1.7;
-    }
-
-    /* Post grid */
+    /* POSTS GRID */
+    #posts { border-top: 1px solid var(--card-border); }
     .posts-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;
     }
-
     .post-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 24px;
-      transition: all 0.2s;
-      text-decoration: none;
-      color: inherit;
-      display: block;
+      background: var(--card-bg); border: 1px solid var(--card-border);
+      border-radius: 12px; overflow: hidden; transition: transform .3s, border-color .3s;
+      display: block; color: var(--text);
     }
-    .post-card:hover {
-      border-color: rgba(124,58,237,0.4);
-      transform: translateY(-2px);
+    .post-card:hover { transform: translateY(-5px); border-color: var(--accent); }
+    .post-img {
+      width: 100%; aspect-ratio: 16/9; background: linear-gradient(135deg, #111, #222);
+      display: flex; align-items: center; justify-content: center; font-size: 2.5rem;
     }
-
-    .post-emoji {
-      font-size: 2rem;
-      margin-bottom: 14px;
-      display: block;
+    .post-content { padding: 1.5rem; }
+    .post-title { font-size: 1.25rem; font-weight: 600; margin-bottom: .5rem; line-height: 1.3; }
+    .post-excerpt { font-size: .9rem; color: var(--muted); line-height: 1.6; margin-bottom: 1rem; }
+    .post-meta { font-size: .75rem; color: var(--muted); display: flex; gap: .5rem; align-items: center; }
+    .post-tag {
+      background: var(--card-bg); border: 1px solid var(--card-border);
+      padding: .15rem .5rem; border-radius: 3px; font-size: .65rem; text-transform: uppercase; letter-spacing: .05em;
     }
 
-    .post-card h3 {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 8px;
-      line-height: 1.4;
+    /* SIDEBAR */
+    .sidebar {
+      display: flex; flex-direction: column; gap: 2rem;
     }
-
-    .post-card p {
-      color: var(--text-muted);
-      font-size: 0.85rem;
-      line-height: 1.6;
-      margin-bottom: 14px;
-    }
-
-    /* Sidebar */
-    .sidebar { position: sticky; top: 90px; }
-
     .sidebar-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 22px;
-      margin-bottom: 20px;
+      background: var(--card-bg); border: 1px solid var(--card-border);
+      border-radius: 12px; padding: 1.5rem;
     }
-
     .sidebar-title {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.68rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--purple-light);
-      margin-bottom: 16px;
+      font-family: 'Space Mono', monospace; font-size: .7rem; color: var(--accent);
+      letter-spacing: .1em; margin-bottom: 1rem;
     }
-
-    .sidebar-link {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 0;
-      border-bottom: 1px solid var(--border);
-      text-decoration: none;
-      color: var(--text);
-      font-size: 0.88rem;
-      transition: color 0.2s;
-    }
-    .sidebar-link:last-child { border-bottom: none; }
-    .sidebar-link:hover { color: var(--purple-light); }
-
     .about-avatar {
-      width: 56px;
-      height: 56px;
-      background: linear-gradient(135deg, var(--purple), var(--cyan));
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.6rem;
-      margin-bottom: 14px;
+      width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), #fff);
+      display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: var(--bg);
+      margin-bottom: 1rem;
     }
+    .sidebar-text { font-size: .9rem; color: var(--muted); line-height: 1.6; }
 
-    .sidebar-card p {
-      color: var(--text-muted);
-      font-size: 0.85rem;
-      line-height: 1.6;
-      margin-bottom: 14px;
+    /* NEWSLETTER (paused) */
+    .newsletter-paused {
+      background: var(--card-bg); border: 1px solid var(--card-border);
+      border-radius: 12px; padding: 1.5rem; text-align: center;
     }
+    .newsletter-paused p { font-size: .85rem; color: var(--muted); margin-bottom: 1rem; }
 
-    .sidebar-btn {
-      display: block;
-      text-align: center;
-      background: rgba(124,58,237,0.15);
-      border: 1px solid rgba(124,58,237,0.4);
-      border-radius: 8px;
-      color: var(--purple-light);
-      font-size: 0.85rem;
-      font-weight: 600;
-      padding: 10px;
-      text-decoration: none;
-      transition: all 0.2s;
-    }
-    .sidebar-btn:hover { background: var(--purple); color: white; }
-
-    .store-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 10px 0;
-      border-bottom: 1px solid var(--border);
-      text-decoration: none;
-      color: var(--text);
-    }
-    .store-item:last-child { border-bottom: none; }
-    .store-icon {
-      width: 36px; height: 36px;
-      border-radius: 8px;
-      background: rgba(124,58,237,0.12);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1rem;
-      flex-shrink: 0;
-    }
-    .store-name { font-size: 0.85rem; font-weight: 500; }
-    .store-price { font-size: 0.75rem; color: var(--purple-light); font-family: 'Space Mono', monospace; }
-
-    /* Footer */
+    /* FOOTER */
     footer {
-      position: relative;
-      z-index: 1;
-      border-top: 1px solid var(--border);
-      padding: 32px 24px;
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 0.8rem;
-      font-family: 'Space Mono', monospace;
+      border-top: 1px solid var(--card-border); padding: 2rem 0; margin-top: 4rem;
+      text-align: center; color: var(--muted); font-size: .85rem;
     }
-    footer a { color: var(--purple-light); text-decoration: none; }
+    .footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 1rem; flex-wrap: wrap; }
+    .footer-links a { color: var(--muted); font-size: .85rem; }
+    .footer-links a:hover { color: var(--accent); }
 
-    @media (max-width: 768px) {
-      .main { grid-template-columns: 1fr; }
-      .sidebar { position: static; }
-      .posts-grid { grid-template-columns: 1fr; }
+    @media (max-width: 900px) {
+      .featured-grid { grid-template-columns: 1fr; }
       .nav-links { display: none; }
-      #navbar { padding: 10px 16px; }
-      .hero { padding: 100px 16px 40px; }
     }
   </style>
 </head>
 <body>
 
-  <nav id="navbar">
-    <a href="https://iamdeathgod.tech">
-      <img src="https://iamdeathgod.tech/logo.svg" alt="iamdeathgod" style="height:44px;width:auto;" />
-    </a>
-    <div class="nav-links">
-      <a href="https://iamdeathgod.tech">Home</a>
-      <a href="https://iamdeathgod.gumroad.com">Store</a>
-      <a href="https://gen.iamdeathgod.tech">AI Gen</a>
-      <a href="https://twitter.com/iamdeathgod" target="_blank">Twitter</a>
+  <nav>
+    <div class="container nav-inner">
+      <div class="nav-logo">IAMDEATHGOD</div>
+      <ul class="nav-links">
+        <li><a href="#featured">Featured</a></li>
+        <li><a href="#posts">Posts</a></li>
+        <li><a href="https://iamdeathgod.tech">Main</a></li>
+        <li><a href="https://gen.iamdeathgod.tech">Gen</a></li>
+      </ul>
+      <a href="https://iamdeathgod.gumroad.com" class="btn">Store</a>
     </div>
   </nav>
 
-  <div class="hero">
-    <div class="hero-badge">☠️ BLOG // GAMING · ANIME · PRODUCTIVITY</div>
-    <h1>Gaming, Anime & Productivity Blog —<br/><span>Real talk. No fluff.</span></h1>
-    <p>Gaming guides, anime takes, and productivity stuff that actually works for night owls and gamers.</p>
-    <div class="categories">
-      <button class="cat-btn active">All</button>
-      <button class="cat-btn">🎮 Gaming</button>
-      <button class="cat-btn">⛩️ Anime</button>
-      <button class="cat-btn">📋 Productivity</button>
-      <button class="cat-btn">🛠️ Tools</button>
+  <section id="hero">
+    <div class="container">
+      <span class="hero-badge">☠️ BLOG</span>
+      <h1 class="hero-title">Gaming, Anime & Productivity</h1>
+      <p class="hero-subtitle">Real talk. No fluff. Templates that actually work.</p>
     </div>
-  </div>
+  </section>
 
-  <!-- Newsletter Signup -->
-  <div style="position:relative;z-index:1;max-width:860px;margin:0 auto;padding:0 24px 60px;">
-    <div style="background:linear-gradient(135deg,rgba(124,58,237,0.12),rgba(6,182,212,0.08));border:1px solid rgba(124,58,237,0.3);border-radius:20px;padding:28px;text-align:center;">
-      <div style="font-family:'Space Mono',monospace;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--purple-light);margin-bottom:10px;">// Newsletter</div>
-      <h2 style="font-size:1.3rem;font-weight:700;margin-bottom:8px;color:var(--text);">Get anime & gaming posts in your inbox</h2>
-      <p style="color:var(--text-muted);font-size:0.9rem;max-width:500px;margin:0 auto 16px;">No spam. Just the good stuff — new posts delivered weekly. <strong>2,369 subscribers</strong>.</p>
-      <form action="https://beehiiv.com/subscribe" method="post" target="_blank" style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;max-width:500px;margin:0 auto;">
-        <input type="email" name="email" placeholder="you@example.com" required style="flex:1;min-width:200px;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:10px 14px;color:var(--text);font-size:0.9rem;" />
-        <input type="hidden" name="publication_id" value="f9341471-298d-4c33-b7fe-1800241db3c6" />
-        <button type="submit" style="background:var(--purple);color:white;border:none;border-radius:8px;padding:10px 24px;font-weight:600;font-size:0.9rem;cursor:pointer;transition:background 0.2s;">Subscribe</button>
-      </form>
-      <p style="font-size:0.72rem;color:var(--text-muted);margin-top:12px;opacity:0.7">Powered by <a href="https://beehiiv.com" target="_blank" style="color:var(--cyan);">Beehiiv</a></p>
-    </div>
-  </div>
-
-  <div class="main">
-    <div>
-      <!-- Featured Post -->
-      <a href="/posts/why-every-gamer-needs-notion.html" class="featured">
-        <div class="featured-img">
-          🎮
-          <div class="featured-badge">Featured</div>
-        </div>
-        <div class="featured-body">
-          <div class="post-meta">
-            <span class="tag">Gaming</span>
-            <span class="tag productivity">Productivity</span>
-            <span class="post-date">Mar 8, 2026</span>
-            <span class="post-read-time">· 5 min read</span>
-          </div>
-          <h2>Why Every Gamer Needs a Notion Dashboard (And How to Actually Use One)</h2>
-          <p>I used to have 47 browser tabs open tracking my game backlog. Steam wishlist here, HowLongToBeat there, random notes in Discord. It was a mess. Here's how I fixed it with one Notion setup that I actually open every day.</p>
+  <section id="featured">
+    <div class="container">
+      <p class="featured-label">// Featured Post</p>
+      <a href="/posts/why-every-gamer-needs-notion.html" style="color: inherit;">
+        <h2 class="featured-title">Why Every Gamer Needs a Notion Dashboard (And How to Actually Use One)</h2>
+        <p class="featured-excerpt">
+          I used to have 47 browser tabs open tracking my game backlog. Steam wishlist here, HowLongToBeat there, random notes in Discord. It was a mess. Here's how I fixed it with one Notion setup that I actually open every day.
+        </p>
+        <div class="featured-meta">
+          <span class="featured-tag">Gaming</span>
+          <span class="featured-tag">Productivity</span>
+          <span>Mar 8, 2026 · 5 min read</span>
         </div>
       </a>
+    </div>
+  </section>
 
-      <!-- Posts Grid -->
-      <div class="posts-grid">
-        <a href="/posts/notion-anime-watchlist-march-2026.html" class="post-card">
-          <span class="post-emoji">📋</span>
-          <div class="post-meta" style="margin-bottom:10px">
-            <span class="tag anime">Anime</span>
-            <span class="tag productivity">Productivity</span>
-            <span class="post-date">Mar 11, 2026</span>
-          </div>
-          <h3>How to Build a Notion Anime Watchlist That Actually Helps You Keep Up</h3>
-          <p>March 2026 is stacked: Steel Ball Run, Frieren S2, Link Click S3. Here's how to Notion-ize your watchlist and actually watch the good stuff.</p>
-          <span style="font-size:0.8rem;color:var(--purple-light);">Read more →</span>
-        </a>
-        <a href="/posts/best-anime-march-2026.html" class="post-card">
-          <span class="post-emoji">⛩️</span>
-          <div class="post-meta" style="margin-bottom:10px">
-            <span class="tag anime">Anime</span>
-            <span class="post-date">Mar 9, 2026</span>
-          </div>
-          <h3>Best Anime to Watch in March 2026 — No Fluff, Just the Real Ones</h3>
-          <p>Frieren S2, Steel Ball Run, JJK finale. March is stacked. Here's what to watch first and what can wait.</p>
-          <span style="font-size:0.8rem;color:var(--purple-light);">Read more →</span>
-        </a>
-        <a href="/posts/anime-vault-guide.html" class="post-card">
-          <span class="post-emoji">⛩️</span>
-          <div class="post-meta" style="margin-bottom:10px">
-            <span class="tag anime">Anime</span>
-            <span class="post-date">Mar 8, 2026</span>
-          </div>
-          <h3>I Watched 200+ Anime. Here's How I Finally Stopped Forgetting What I've Seen</h3>
-          <p>MAL is fine but I needed something I actually controlled. Built an Anime Vault in Notion and it changed everything.</p>
-          <span style="font-size:0.8rem;color:var(--purple-light);">Read more →</span>
-        </a>
-
-        <a href="/posts/gaming-notion-template-tour.html" class="post-card">
-          <span class="post-emoji">📋</span>
-          <div class="post-meta" style="margin-bottom:10px">
-            <span class="tag">Gaming</span>
-            <span class="post-date">Mar 8, 2026</span>
-          </div>
-          <h3>Full Tour: Gaming HQ Notion Template — What's Inside and How to Use It</h3>
-          <p>A complete walkthrough of every section in the Gaming HQ template — backlog, session log, goals, and wishlist.</p>
-          <span style="font-size:0.8rem;color:var(--purple-light);">Read more →</span>
-        </a>
-
-        <a href="/posts/stop-buying-games-you-dont-play.html" class="post-card">
-          <span class="post-emoji">🛒</span>
-          <div class="post-meta" style="margin-bottom:10px">
-            <span class="tag">Gaming</span>
-            <span class="post-date">Mar 8, 2026</span>
-          </div>
-          <h3>Stop Buying Games You Never Play — The Backlog Problem and How to Fix It</h3>
-          <p>Steam sales are a trap. Here's a system that actually helps you play the games you own before buying more.</p>
-          <span style="font-size:0.8rem;color:var(--purple-light);">Read more →</span>
-        </a>
-
-        <a href="/posts/creator-dashboard-guide.html" class="post-card">
-          <span class="post-emoji">🚀</span>
-          <div class="post-meta" style="margin-bottom:10px">
-            <span class="tag productivity">Productivity</span>
-            <span class="post-date">Mar 8, 2026</span>
-          </div>
-          <h3>How I Manage Content Creation, Projects, and Side Hustles in One Dashboard</h3>
-          <p>Running multiple things at once without losing your mind. The Creator Dashboard setup that keeps me sane.</p>
-          <span style="font-size:0.8rem;color:var(--purple-light);">Read more →</span>
-        </a>
+  <section id="posts">
+    <div class="container">
+      <div class="featured-grid">
+        <div class="posts-grid" style="grid-column: 1 / -1;">
+          <a href="/posts/notion-anime-watchlist-march-2026.html" class="post-card">
+            <div class="post-img">📋</div>
+            <div class="post-content">
+              <h3 class="post-title">How to Build a Notion Anime Watchlist That Actually Helps You Keep Up</h3>
+              <p class="post-excerpt">March 2026 is stacked: Steel Ball Run, Frieren S2, Link Click S3. Here's how to Notion-ize your watchlist and actually watch the good stuff.</p>
+              <div class="post-meta">
+                <span class="post-tag">Anime</span>
+                <span class="post-tag">Productivity</span>
+                <span>Mar 11, 2026</span>
+              </div>
+            </div>
+          </a>
+          <a href="/posts/best-anime-march-2026.html" class="post-card">
+            <div class="post-img">⛩️</div>
+            <div class="post-content">
+              <h3 class="post-title">Best Anime to Watch in March 2026 — No Fluff, Just the Real Ones</h3>
+              <p class="post-excerpt">Frieren S2, Steel Ball Run, JJK finale. March is stacked. Here's what to watch first and what can wait.</p>
+              <div class="post-meta">
+                <span class="post-tag">Anime</span>
+                <span>Mar 9, 2026</span>
+              </div>
+            </div>
+          </a>
+        </div>
       </div>
     </div>
+  </section>
 
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <div class="sidebar-card">
-        <div class="about-avatar">☠️</div>
-        <div class="sidebar-title">// About</div>
-        <p>I'm iamdeathgod. I game too much, watch too much anime, and somehow make it all organized with Notion. This is where I write about it.</p>
-        <a href="https://iamdeathgod.tech" class="sidebar-btn">View Profile →</a>
+  <section id="about">
+    <div class="container">
+      <div class="featured-grid">
+        <div>
+          <p class="featured-label">// About</p>
+          <h2 class="section-title">Why this blog exists</h2>
+        </div>
+        <div class="sidebar-text">
+          <p>I'm iamdeathgod. I game too much, watch too much anime, and somehow make it all organized with Notion. This blog is where I write about it — no corporate speak, just real talk.</p>
+          <p style="margin-top: 1rem;">I also build templates. Check out my <a href="https://iamdeathgod.gumroad.com">store</a> if you want the systems without the setup headache.</p>
+        </div>
       </div>
+    </div>
+  </section>
 
-      <div class="sidebar-card">
-        <div class="sidebar-title">// Store</div>
-        <a href="https://iamdeathgod.gumroad.com/l/gamingnotion" target="_blank" class="store-item">
-          <div class="store-icon">🎮</div>
-          <div>
-            <div class="store-name">Gaming HQ Template</div>
-            <div class="store-price">$7</div>
-          </div>
-        </a>
-        <a href="https://iamdeathgod.gumroad.com" target="_blank" class="store-item">
-          <div class="store-icon">⛩️</div>
-          <div>
-            <div class="store-name">Anime Vault Template</div>
-            <div class="store-price">$7</div>
-          </div>
-        </a>
-        <a href="https://iamdeathgod.gumroad.com" target="_blank" class="store-item">
-          <div class="store-icon">🚀</div>
-          <div>
-            <div class="store-name">Creator Dashboard</div>
-            <div class="store-price">$9</div>
-          </div>
-        </a>
-      </div>
-
-      <div class="sidebar-card">
-        <div class="sidebar-title">// Tools I Use</div>
-        <a href="https://gen.iamdeathgod.tech" class="sidebar-link">⚡ AI Image Generator</a>
-        <a href="https://notion.so" target="_blank" class="sidebar-link">📋 Notion</a>
-        <a href="https://howlongtobeat.com" target="_blank" class="sidebar-link">🎮 HowLongToBeat</a>
-        <a href="https://myanimelist.net" target="_blank" class="sidebar-link">⛩️ MyAnimeList</a>
-      </div>
-
-      <div class="sidebar-card">
-        <div class="sidebar-title">// Find Me</div>
-        <a href="https://twitter.com/iamdeathgod" target="_blank" class="sidebar-link">𝕏 @iamdeathgod</a>
-        <a href="https://github.com/iamdeathgod" target="_blank" class="sidebar-link">⌨️ GitHub</a>
-        <a href="https://instagram.com/iamdeathgod" target="_blank" class="sidebar-link">📸 Instagram</a>
-      </div>
-    </aside>
-  </div>
+  <section id="contact">
+    <div class="container">
+      <p class="featured-label">// Contact</p>
+      <h2 class="section-title">Get in touch</h2>
+      <a href="mailto:me@iamdeathgod.tech" class="contact-email" style="font-size: clamp(24px, 4vw, 48px); font-weight: 600; color: var(--text); text-decoration: underline;">me@iamdeathgod.tech</a>
+    </div>
+  </section>
 
   <footer>
-    <p>☠️ <a href="https://iamdeathgod.tech">iamdeathgod.tech</a> · <a href="https://blog.iamdeathgod.tech">blog</a> · <a href="https://gen.iamdeathgod.tech">gen</a> · <a href="https://iamdeathgod.gumroad.com">store</a></p>
-    <p style="margin-top:8px;opacity:0.5">© 2026 iamdeathgod · Built with ☠️</p>
+    <div class="container">
+      <div class="footer-links">
+        <a href="https://iamdeathgod.tech">Main Site</a>
+        <a href="https://gen.iamdeathgod.tech">Gen AI</a>
+        <a href="https://blog.iamdeathgod.tech/rss.xml">RSS</a>
+        <a href="https://iamdeathgod.gumroad.com">Store</a>
+      </div>
+      <p>© 2026 iamdeathgod. Built with ☠️</p>
+    </div>
   </footer>
-
-  <script>
-    let lastY = 0;
-    const nav = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      const y = window.scrollY;
-      if (y > lastY && y > 60) nav.classList.add('hidden');
-      else nav.classList.remove('hidden');
-      lastY = y;
-    }, { passive: true });
-
-    // Category filter (visual only for now)
-    document.querySelectorAll('.cat-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-      });
-    });
-  </script>
 
 </body>
 </html>
