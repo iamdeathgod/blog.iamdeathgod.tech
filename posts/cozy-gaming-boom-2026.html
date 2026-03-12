@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>The Cozy Gaming Boom of 2026 — iamdeathgod</title>
+  <meta name="description" content="Cozy games are everywhere in 2026. Witchbrook, Tales of Seikyu, Loftia — how do you keep track of them all without going crazy? Here's the Notion setup that actually works." />
+  <meta name="keywords" content="cozy games 2026, notion template, gaming productivity, witchbrook, tales of seikyu, backlog tracker" />
+  <link rel="canonical" href="https://blog.iamdeathgod.tech/posts/cozy-gaming-boom-2026.html" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://blog.iamdeathgod.tech/posts/cozy-gaming-boom-2026.html" />
+  <meta property="og:title" content="The Cozy Gaming Boom of 2026: Build a Notion System That Works" />
+  <meta property="og:description" content="Cozy games are everywhere in 2026. Here's how to build a Notion system that helps you track, organize, and actually enjoy them without the chaos." />
+  <meta property="og:image" content="https://iamdeathgod.tech/logo.svg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@iamdeathgod" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "The Cozy Gaming Boom of 2026: Build a Notion System That Works",
+    "description": "Cozy games are everywhere in 2026. Here's how to build a Notion system that helps you track, organize, and actually enjoy them without the chaos.",
+    "author": { "@type": "Person", "name": "iamdeathgod", "url": "https://iamdeathgod.tech" },
+    "datePublished": "2026-03-12",
+    "dateModified": "2026-03-12",
+    "publisher": { "@type": "Person", "name": "iamdeathgod" },
+    "mainEntityOfPage": "https://blog.iamdeathgod.tech/posts/cozy-gaming-boom-2026.html"
+  }
+  </script>
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #07070f; --surface: #0d0d1a; --surface2: #13132b;
+      --border: #1e1e3a; --purple: #7c3aed; --purple-light: #a855f7;
+      --cyan: #06b6d4; --text: #e2e8f0; --text-muted: #64748b; --green: #4ade80;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: var(--bg); color: var(--text); font-family: 'Space Grotesk', sans-serif; line-height: 1.7; }
+    body::before {
+      content: ''; position: fixed; inset: 0;
+      background-image: linear-gradient(rgba(124,58,237,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(124,58,237,0.03) 1px, transparent 1px);
+      background-size: 40px 40px; pointer-events: none; z-index: 0;
+    }
+    #navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 12px 32px; display: flex; align-items: center; justify-content: space-between;
+      background: rgba(7,7,15,0.9); backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(124,58,237,0.12); transition: transform 0.3s;
+    }
+    #navbar.hidden { transform: translateY(-100%); }
+    .nav-back { color: var(--text-muted); text-decoration: none; font-size: 0.88rem; transition: color 0.2s; }
+    .nav-back:hover { color: var(--purple-light); }
+
+    .article-wrap { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; padding: 100px 24px 80px; }
+
+    .post-header { margin-bottom: 40px; }
+    .post-meta { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
+    .tag { background: rgba(124,58,237,0.12); border: 1px solid rgba(124,58,237,0.25); color: var(--purple-light); font-size: 0.7rem; font-family: 'Space Mono', monospace; padding: 3px 10px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.08em; }
+    .tag.productivity { background: rgba(74,222,128,0.1); border-color: rgba(74,222,128,0.3); color: var(--green); }
+    .post-date { color: var(--text-muted); font-size: 0.78rem; font-family: 'Space Mono', monospace; }
+    h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 16px; }
+    .post-lead { font-size: 1.1rem; color: #94a3b8; line-height: 1.75; margin-bottom: 32px; border-left: 3px solid var(--purple); padding-left: 20px; }
+
+    .article-body h2 { font-size: 1.4rem; font-weight: 700; margin: 40px 0 16px; color: var(--text); }
+    .article-body h3 { font-size: 1.1rem; font-weight: 600; margin: 28px 0 12px; color: var(--purple-light); }
+    .article-body p { color: #b0bec5; margin-bottom: 20px; font-size: 1rem; line-height: 1.8; }
+    .article-body strong { color: var(--text); font-weight: 600; }
+    .article-body ul, .article-body ol { margin: 0 0 20px 24px; color: #b0bec5; }
+    .article-body li { margin-bottom: 8px; line-height: 1.7; }
+
+    .callout {
+      background: rgba(124,58,237,0.08); border: 1px solid rgba(124,58,237,0.25);
+      border-radius: 12px; padding: 20px 24px; margin: 28px 0;
+      display: flex; gap: 14px; align-items: flex-start;
+    }
+    .callout-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+    .callout p { margin: 0; color: var(--text); }
+
+    .cta-box {
+      background: linear-gradient(135deg, rgba(124,58,237,0.15), rgba(6,182,212,0.08));
+      border: 1px solid rgba(124,58,237,0.3); border-radius: 16px;
+      padding: 28px 32px; margin: 40px 0; text-align: center;
+    }
+    .cta-box h3 { font-size: 1.2rem; margin-bottom: 10px; }
+    .cta-box p { color: var(--text-muted); margin-bottom: 20px; font-size: 0.9rem; }
+    .cta-btn {
+      display: inline-block; background: var(--purple); color: white;
+      padding: 12px 28px; border-radius: 10px; text-decoration: none;
+      font-weight: 600; font-size: 0.95rem; transition: all 0.2s;
+    }
+    .cta-btn:hover { background: var(--purple-light); transform: translateY(-1px); }
+
+    .author-box {
+      display: flex; gap: 16px; align-items: center;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 14px; padding: 20px 24px; margin-top: 48px;
+    }
+    .author-avatar { width: 52px; height: 52px; background: linear-gradient(135deg, var(--purple), var(--cyan)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; }
+    .author-name { font-weight: 600; margin-bottom: 4px; }
+    .author-bio { color: var(--text-muted); font-size: 0.85rem; }
+
+    footer { border-top: 1px solid var(--border); padding: 28px 24px; text-align: center; color: var(--text-muted); font-size: 0.78rem; font-family: 'Space Mono', monospace; position: relative; z-index: 1; }
+    footer a { color: var(--purple-light); text-decoration: none; }
+
+    @media (max-width: 600px) {
+      .article-wrap { padding: 88px 16px 60px; }
+      h1 { font-size: 1.7rem; }
+      #navbar { padding: 10px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="https://blog.iamdeathgod.tech" class="nav-back">← Back to Blog</a>
+    <a href="https://iamdeathgod.tech">
+      <img src="https://iamdeathgod.tech/logo.svg" alt="iamdeathgod" style="height:40px;width:auto;" />
+    </a>
+  </nav>
+
+  <div class="article-wrap">
+    <header class="post-header">
+      <div class="post-meta">
+        <span class="tag">Gaming</span>
+        <span class="tag productivity">Productivity</span>
+        <span class="post-date">March 12, 2026 · 6 min read</span>
+      </div>
+      <h1>The Cozy Gaming Boom of 2026: How to Actually Keep Up</h1>
+      <p class="post-lead">2026 is the year of cozy games. Witchbrook, Tales of Seikyu, Loftia, My Time at Evershine — they're all coming. If you're like me, your wishlist is already 50 games deep and growing. Here's how I'm using Notion to stay sane and actually play the ones I care about.</p>
+    </header>
+
+    <article class="article-body">
+
+      <p>Every time I open Reddit or YouTube this month, it's "Witchbrook this" and "Tales of Seikyu that." The cozy game pipeline is packed. 2026 might be the biggest year for relaxing games ever.</p>
+
+      <p>And honestly? I'm thrilled. I love my Souls-likes as much as the next masochist, but sometimes you just want to farm some crops and befriend a town full of weirdos without the threat of instant death around every corner.</p>
+
+      <p>But there's a problem. When every game feels chill and approachable, everything starts looking equally appealing. Your Steam wishlist explodes. Your "to-play" list becomes a psychological burden. You end up scrolling through store pages for an hour, paralyzed by choice, and then play nothing at all.</p>
+
+      <p>I've been there. I still am there, honestly. But I've built a Notion system that's actually helping. And if you're drowning in cozy game FOMO, maybe it'll help you too.</p>
+
+      <h2>Why Cozy Games Are Different</h2>
+
+      <p>Cozy games don't have that "must-play NOW" urgency that blockbuster AAA titles have. There's no cultural wave to ride — you can play Witchbrook three months after launch and miss nothing. That's the whole point.</p>
+
+      <p>But that freedom is also a trap. Without deadlines, without hype cycles, cozy games just... sit there. They accumulate. They become good intentions. They're the "I'll start playing this weekend" game that weekend never comes for.</p>
+
+      <p>The solution isn't to play more. It's to decide, intentionally, what you actually want to play — and stop pretending you'll get to everything.</p>
+
+      <h2>My Notion Setup for Cozy Games</h2>
+
+      <p>I call it the Cozy Queue. It's a simple Notion database with a few key views that match my different moods.</p>
+
+      <h3>1. The "Right Now" View</h3>
+      <p>This is my default. It shows games that are: (a) released, (b) not yet completed, and (c) marked as "current priority." I keep only 2–3 items in this view at any time. When I finish one, I pick the next from the backlog and promote it.</p>
+
+      <p>The magic is in limiting the visible options. Choice Paralysis™ is defeated by having too few choices, not too many.</p>
+
+      <h3>2. The "Coming Soon" Tracker</h3>
+      <p>Release dates matter for cozy games more than you think. You don't want to be playing My Time at Evershine two weeks before Loftia drops — that's how you bounce off both.</p>
+
+      <p>I track upcoming releases with expected dates, and I have a view that shows me everything launching in the next 90 days. That way I can plan ahead: maybe I finish my current game a week before something big drops, so I have buffer time.</p>
+
+      <h3>3. The Mood-Based Filter</h3>
+      <p>Sometimes I want farming, sometimes I want crafting, sometimes I want exploration, sometimes I want story. I tag each game with its primary vibe and have saved filters for each mood.</p>
+
+      <p>Feeling stressed? Filter by "chill" or "comfort." Bored? Filter by "exploration" or "progression." It's like Netflix categories but for games I actually own.</p>
+
+      <h3>4. The Playtime Tracker</h3>
+      <p>Cozy games can easily eat 100+ hours. I track how long I've played each one (Notion has a number property) and set personal benchmarks. "I want to finish this before hitting 50 hours" is oddly motivating — it keeps me moving instead of just meandering forever.</p>
+
+      <div class="callout">
+        <span class="callout-icon">🌱</span>
+        <p>The goal isn't to rush through cozy games. It's to <strong>play intentionally</strong> so you actually experience the games you love instead of watching them gather digital dust.</p>
+      </div>
+
+      <h2>The Real Secret: It's Not About the System</h2>
+
+      <p>I could give you my exact Notion template and it might not work for you. Because the system only works if you actually open it.</p>
+
+      <p>Here's what I've learned about habit formation:</p>
+
+      <ul>
+        <li><strong>Make it stupid easy.</strong> I have a button in my phone's home screen that opens my Cozy Queue directly. One tap.</li>
+        <li><strong>Review weekly.</strong> Every Sunday I spend 5 minutes scanning the tracker, adjusting priorities, deleting games I know I'll never play.</li>
+        <li><strong>No judgment.</strong> Some games I'll never finish. That's fine. I mark them as "dropped" and move on. Guilt is the enemy of fun.</li>
+      </ul>
+
+      <p>The point is to have a single source of truth. Not scattered Steam tags, not wishlists across three different stores, not Post-it notes on your monitor. One place that tells you what's next.</p>
+
+      <h2>Where to Find the Games</h2>
+
+      <p>While building this, I realized there's no single page that tracks all the cozy releases coming up. So I added a "Discovery" section to my tracker — links to Steam,itch.io, and various cozy gaming subreddits I check monthly.</p>
+
+      <p>If you're looking for new releases, I recommend following:</p>
+
+      <ul>
+        <li><strong>r/CozyGamers</strong> — the daily threads are gold</li>
+        <li><strong>Cozy Games List</strong> on Steam (curated community list)</li>
+        <li><strong>YouTube channels</strong> like Cozy Gaming and the Cozy Corner</li>
+      </ul>
+
+      <p>And of course, keep an eye on the major 2026 releases: Witchbrook, Tales of Seikyu, My Time at Evershine, Loftia, Fields of Mistria. They're going to dominate the space.</p>
+
+      <div class="callout">
+        <span class="callout-icon">⚠️</span>
+        <p>Cozy game wishlists have a way of becoming "I'll play this someday" tombs. If a game's been on your list for more than 6 months and you haven't even <em>checked a trailer</em> recently, maybe it's not meant to be. Give yourself permission to remove it.</p>
+      </div>
+
+      <h2>Get the Template (If You Want)</h2>
+
+      <p>Building this from scratch takes maybe an hour if you know Notion. If you'd rather skip the setup, I've packaged my exact Cozy Gaming Tracker as a Notion template. It has all the views, tags, and properties I use, ready to duplicate and customize.</p>
+
+      <p>It's not fancy — it's just practical. And it costs $5 because honestly, if you're not willing to spend the price of a coffee on organizing your gaming life, maybe you don't need it that badly.</p>
+
+      <div class="cta-box">
+        <h3>🌿 Cozy Gaming Tracker — Notion Template</h3>
+        <p>Pre-built database with mood filters, release tracker, and playtime log. Ready in 60 seconds.</p>
+        <a href="https://iamdeathgod.gumroad.com" target="_blank" class="cta-btn">Get it for $5 →</a>
+      </div>
+
+      <h2>Enjoy the Cozy Apocalypse</h2>
+
+      <p>2026 is a great year to love cozy games. The variety is incredible. The quality is higher than ever. Don't let indecision steal your enjoyment.</p>
+
+      <p>Make a plan. Track it somewhere you'll actually look. Then close the browser, launch the game, and chill.</p>
+
+      <p>That's the whole point, after all.</p>
+
+    </article>
+
+    <!-- Social Share Buttons -->
+    <div style="display:flex;gap:12px;align-items:center;margin:32px 0;padding:20px 24px;background:#0d0d1a;border:1px solid #1e1e3a;border-radius:12px;">
+      <span style="font-family:'Space Mono',monospace;font-size:0.72rem;color:#64748b;letter-spacing:0.1em;text-transform:uppercase;flex-shrink:0;">Share →</span>
+      <a href="javascript:void(0)" onclick="window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(document.title)+'&url='+encodeURIComponent(location.href),'_blank','width=550,height=420')" style="display:inline-flex;align-items:center;gap:6px;background:rgba(124,58,237,0.12);border:1px solid rgba(124,58,237,0.25);color:#a855f7;font-size:0.82rem;padding:7px 14px;border-radius:8px;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.background='rgba(124,58,237,0.25)'" onmouseout="this.style.background='rgba(124,58,237,0.12)'">𝕏 Tweet</a>
+      <a href="javascript:void(0)" onclick="window.open('https://reddit.com/submit?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title),'_blank','width=550,height=500')" style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,69,0,0.1);border:1px solid rgba(255,69,0,0.25);color:#ff6b35;font-size:0.82rem;padding:7px 14px;border-radius:8px;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.background='rgba(255,69,0,0.2)'" onmouseout="this.style.background='rgba(255,69,0,0.1)'">Reddit</a>
+      <a href="javascript:void(0)" onclick="navigator.clipboard.writeText(location.href).then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Copy Link',2000)})" style="display:inline-flex;align-items:center;gap:6px;background:rgba(6,182,212,0.1);border:1px solid rgba(6,182,212,0.25);color:#06b6d4;font-size:0.82rem;padding:7px 14px;border-radius:8px;text-decoration:none;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.background='rgba(6,182,212,0.2)'" onmouseout="this.style.background='rgba(6,182,212,0.1)'">Copy Link</a>
+    </div>
+    <div class="author-box">
+      <div class="author-avatar">☠️</div>
+      <div>
+        <div class="author-name">iamdeathgod</div>
+        <div class="author-bio">Gamer, anime watcher, Notion nerd. Building templates for people who refuse to be disorganized. <a href="https://twitter.com/iamdeathgod" style="color:var(--purple-light)">@iamdeathgod</a></div>
+      </div>
+    </div>
+  </div>
+
+    <footer>
+    <a href="https://blog.iamdeathgod.tech">← All Posts</a> &nbsp;·&nbsp;
+    <a href="https://iamdeathgod.tech">iamdeathgod.tech</a> &nbsp;·&nbsp;
+    <a href="https://iamdeathgod.gumroad.com">Store</a>
+  </footer>
+
+  <script>
+    let lastY = 0;
+    const nav = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      if (y > lastY && y > 60) nav.classList.add('hidden');
+      else nav.classList.remove('hidden');
+      lastY = y;
+    }, { passive: true });
+  </script>
+
+</body>
+</html>
